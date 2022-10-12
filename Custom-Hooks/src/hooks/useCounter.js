@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react"
 
 
-const useCounter = () => {
+const useCounter = (mark) => {
     const [counter, setCounter] = useState(0);
 
     useEffect(() => {
-      const interval = setInterval(() => {
-        setCounter((prevCounter) => prevCounter + 1);
-      }, 1000);
-  
-      return () => clearInterval(interval);
-    }, []);
+        const interval = setInterval(() => {
+            if (mark === 'forward') {
+                setCounter((prevCounter) => prevCounter + 1);
+
+            } else if (mark === 'backward') {
+                setCounter((prevCounter) => prevCounter - 1);
+
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [mark]);
+
+    return counter
 
 
 }
