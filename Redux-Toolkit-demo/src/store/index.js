@@ -1,13 +1,17 @@
 import { createStore } from 'redux'
 
+const initialState = {
+    counter:0,
+    showCounter:true
+}
 
 
-const counterReducer = (state = { counter: 0, visibility: "visible" }, action) => {
+const counterReducer = (state = initialState, action) => {
     if (action.type === 'increment') {
 
         return {
             counter: state.counter + 1,
-            visibility: state.visibility
+            showCounter: state.showCounter
         }
     }
 
@@ -15,7 +19,7 @@ const counterReducer = (state = { counter: 0, visibility: "visible" }, action) =
 
         return {
             counter: state.counter - 1,
-            visibility: state.visibility
+            showCounter: state.showCounter
 
         }
     }
@@ -24,28 +28,19 @@ const counterReducer = (state = { counter: 0, visibility: "visible" }, action) =
 
         return {
             counter: state.counter + action.payload,
-            visibility: state.visibility
+            showCounter: state.showCounter
 
         }
     }
 
     if (action.type === "toggle") {
 
-        if (state.visibility === "visible") {
+        
             return {
                 counter: state.counter,
-                visibility: "hidden"
+                showCounter: !state.showCounter
             }
-
-        }
-        if (state.visibility === "hidden") {
-            return {
-                counter: state.counter,
-                visibility: "visible"
-            }
-
-        }
-
+            
     }
 
     return state
