@@ -7,6 +7,7 @@ const Counter = () => {
 
   const dispatch = useDispatch()
   const counter = useSelector(state => state.counter)
+  const visibitity = useSelector(state => state.visibility)
 
   const incrementHandler = () => {
 
@@ -25,13 +26,14 @@ const Counter = () => {
 
 
   const toggleCounterHandler = () => {
+    dispatch({ type: 'toggle' })
 
   };
 
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>{counter}</div>
+      <div style={{ visibility: visibitity }} className={classes.value}>{counter}</div>
       <div>
         <button onClick={incrementHandler} >Increment</button>
         <button onClick={decrementHandler}>Decrement</button>
