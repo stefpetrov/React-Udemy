@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-
 const initialCounterState = {
     counter: 0,
     showCounter: true

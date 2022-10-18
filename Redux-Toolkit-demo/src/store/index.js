@@ -9,7 +9,5 @@ const store = configureStore({
         auth: authReducer
     }
 })
-// 'reducer' can be a object with many reducers, if we have
-
 
 export default store
