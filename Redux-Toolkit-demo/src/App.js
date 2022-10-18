@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Auth from './components/Auth';
 import Counter from './components/Counter';
 import Header from './components/Header';
+import UserProfile from './components/UserProfile';
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <Fragment>
-      {isLoggedIn ? <Header /> : <Auth />}
+      <Header />
+      {isLoggedIn ? <UserProfile /> : <Auth />}
       <Counter />
     </Fragment>
   );
