@@ -10,8 +10,6 @@ function App() {
 
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
 
-
-
   return (
     <Fragment>
       <Header />
