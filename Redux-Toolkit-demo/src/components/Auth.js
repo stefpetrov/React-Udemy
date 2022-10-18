@@ -4,11 +4,12 @@ import classes from './Auth.module.css';
 
 const Auth = () => {
 
-  const dispatch = useDispatch(state => state.auth.isLoggedIn)
+  const dispatch = useDispatch()
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
 
 
-  const loginHandler = () => {
+  const loginHandler = (event) => {
+    event.preventDefault()
     dispatch(authActions.login())
 
   }

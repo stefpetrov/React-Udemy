@@ -4,9 +4,8 @@ import classes from './Header.module.css';
 
 const Header = () => {
 
-  const dispatch = useDispatch(state => state.auth.isLoggedIn)
+  const dispatch = useDispatch()
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
-
 
   const logoutHandler = () => {
     dispatch(authActions.logout())
