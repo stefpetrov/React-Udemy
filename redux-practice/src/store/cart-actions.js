@@ -23,7 +23,7 @@ export const fetchCartData = () => {
 
         try {
             const cartData = await fetchData()
-            dispatch(cartActions.replaceCart({
+            dispatch(cartActions.setCart({
                 items: cartData.items || [],
                 totalQuantity: cartData.totalQuantity
                 // we did not provide the entire cartData, becouse if we have empty array and reload, we will get an error
