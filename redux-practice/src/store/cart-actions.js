@@ -22,8 +22,12 @@ export const fetchCartData = () => {
         }
 
         try {
-            const cartData =  await fetchData()
-            dispatch(cartActions.replaceCart(cartData))
+            const cartData = await fetchData()
+            dispatch(cartActions.replaceCart({
+                items: cartData.items || [],
+                totalQuantity: cartData.totalQuantity
+                // we did not provide the entire cartData, becouse if we have empty array and reload, we will get an error
+            }))
 
         } catch (error) {
             dispatch(
@@ -57,7 +61,8 @@ export const sendCartData = (cart) => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify(cart),
+                    body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity }),
+                    // we are not stringify the "cart", becouse we dont want to send "changed" property to Firebase
                 }
             );
 
