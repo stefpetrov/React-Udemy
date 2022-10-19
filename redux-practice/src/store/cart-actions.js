@@ -2,8 +2,6 @@ import { cartActions } from "./cart-slice";
 import { uiActions } from "./ui-slice";
 
 
-
-
 export const fetchCartData = () => {
 
     return async (dispatch) => {
@@ -26,7 +24,7 @@ export const fetchCartData = () => {
             dispatch(cartActions.setCart({
                 items: cartData.items || [],
                 totalQuantity: cartData.totalQuantity
-                // we did not provide the entire cartData, becouse if we have empty array and reload, we will get an error
+                // we did not provide the entire cartData, because if we have empty array and reload, we will get an error
             }))
 
         } catch (error) {

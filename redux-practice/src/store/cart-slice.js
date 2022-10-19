@@ -35,8 +35,6 @@ const cartSlice = createSlice({
                 existingItem.quantity++
                 existingItem.totalPrice += newItem.price
             }
-
-
         },
 
         removeItemFromCart(state, action) {
@@ -44,7 +42,6 @@ const cartSlice = createSlice({
             const existingItem = state.items.find(item => item.id === id)
             state.totalQuantity--
             state.changed = true
-
 
             if (existingItem.quantity === 1) {
                 state.items = state.items.filter(item => item.id !== id)
