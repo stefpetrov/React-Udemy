@@ -4,8 +4,6 @@ import ProductDetail from "./pages/ProductDetail";
 import Products from "./pages/Products";
 import Welcome from "./pages/Welcome";
 
-
-
 function App() {
   return (
     <div>
@@ -25,7 +23,6 @@ function App() {
             <ProductDetail />
           </Route>
         </Switch>
-
       </main>
     </div>
   );
