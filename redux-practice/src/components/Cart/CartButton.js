@@ -5,7 +5,6 @@ import classes from './CartButton.module.css';
 const CartButton = (props) => {
 
   const dispatch = useDispatch()
-  // const cartItems = useSelector(state => state.cart.items)
   const cartQuantity = useSelector(state => state.cart.totalQuantity)
 
 
