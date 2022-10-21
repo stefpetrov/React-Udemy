@@ -29,11 +29,18 @@ const QuoteList = (props) => {
 
   const changeSortingHandler = () => {
 
+    // history.push('/quotes?sort=' + (isSortingAscending ? 'desc' : 'asc'))
+    history.push(`${location.pathname}?sort=${(isSortingAscending ? 'desc' : 'asc')}`)
+    // we use location.pathname insted of hardcoding
 
-    history.push('/quotes?sort=' + (isSortingAscending ? 'desc' : 'asc'))
 
+    // This below, is second alternative, if we have a long urls
 
-
+    // history.push({
+    //   pathname:location.pathname,
+    //   search: `?sort=${(isSortingAscending ? 'desc' : 'asc')}`
+    // })
+    
   }
 
   return (
