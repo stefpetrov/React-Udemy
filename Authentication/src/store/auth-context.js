@@ -38,7 +38,6 @@ const retrieveStoredToken = () => {
         duration: remainingTime
     }
 
-
 }
 
 export const AuthContextProvider = (props) => {
@@ -55,7 +54,7 @@ export const AuthContextProvider = (props) => {
     //  that convert the value to truthy or falsy
 
 
-    const logoutHandler = () => {
+    const logoutHandler = useCallback(() => {
         setToken(null)
         localStorage.removeItem('token')
         localStorage.removeItem('expirationTime')
@@ -64,9 +63,9 @@ export const AuthContextProvider = (props) => {
         if (logoutTimer) {
             clearTimeout(logoutTimer)
         }
-    }
+    }, [])
 
-    const loginHandler = useCallback((token, expirationTime) => {
+    const loginHandler = (token, expirationTime) => {
         setToken(token)
         localStorage.setItem('token', token)
         localStorage.setItem('expirationTime', expirationTime)
@@ -74,7 +73,7 @@ export const AuthContextProvider = (props) => {
         const remainingTime = calculateRemainingTime(expirationTime)
 
         logoutTimer = setTimeout(logoutHandler, remainingTime)
-    }, [])
+    }
 
     useEffect(() => {
         if (tokenData) {
