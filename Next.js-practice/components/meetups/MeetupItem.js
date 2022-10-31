@@ -2,7 +2,7 @@ import Card from '../ui/Card';
 import classes from './MeetupItem.module.css';
 
 import { useRouter } from 'next/router'
-import { route } from 'next/dist/next-server/server/router';
+
 
 function MeetupItem(props) {
 
@@ -10,6 +10,7 @@ function MeetupItem(props) {
 
   const showDetailsHandler = () => {
     // we use this function to navigate as a alternative to Link
+
     router.push('/' + props.id)
   }
 
