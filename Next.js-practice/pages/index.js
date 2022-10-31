@@ -1,5 +1,6 @@
 // domain.com/
 
+import { useEffect, useState } from "react";
 import MeetupList from "../components/meetups/MeetupList"
 
 const DUMMY_MEETUPS = [
@@ -19,13 +20,21 @@ const DUMMY_MEETUPS = [
     }
 ]
 
-const HomePage = () => {
+const HomePage = (props) => {
 
-    return (
 
-        <MeetupList meetups={DUMMY_MEETUPS} />
+    return <MeetupList meetups={props.meetups} />
+}
 
-    );
+export async function getStaticProps() {
+    // we fetching data from API here insted of doing this in the component 
+    // now data is not fetched on the second rerendered cycle, but during the build process
+    //  GREAT FOR SEO, one of the main feature in NextJS(Data fetching for prerendering!)
+    return {
+        props: {
+            meetups: DUMMY_MEETUPS
+        }
+    }
 }
 
 export default HomePage
