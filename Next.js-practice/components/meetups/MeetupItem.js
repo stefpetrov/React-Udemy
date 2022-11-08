@@ -1,17 +1,13 @@
+import { useRouter } from 'next/router';
+
 import Card from '../ui/Card';
 import classes from './MeetupItem.module.css';
 
-import { useRouter } from 'next/router'
-
-
 function MeetupItem(props) {
+  const router = useRouter();
 
-  const router = useRouter()
-
-  const showDetailsHandler = () => {
-    // we use this function to navigate as a alternative to Link
-
-    router.push('/' + props.id)
+  function showDetailsHandler() {
+    router.push('/' + props.id);
   }
 
   return (
