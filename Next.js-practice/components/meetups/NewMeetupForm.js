@@ -8,7 +8,7 @@ function NewMeetupForm(props) {
   const imageInputRef = useRef();
   const addressInputRef = useRef();
   const descriptionInputRef = useRef();
-
+  
   function submitHandler(event) {
     event.preventDefault();
 
