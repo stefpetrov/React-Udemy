@@ -12,7 +12,7 @@ isInstructor = false;
 
 // More complex types
 
-//Array
+// Array
 let hobbies: string[];
 hobbies = ["Sports", "Travel"];
 
@@ -28,7 +28,7 @@ person = {
 };
 
 // Array of objects
-//  The array must be exactly in the same structure
+///  The array must be exactly in the same structure
 
 let people: {
   name: string;
@@ -44,3 +44,49 @@ course = 23;
 
 let courseName: string | number = "React course";
 courseName = 22;
+
+// Type Aliases
+
+/// example 1
+type Employe = {
+  name: string;
+  age: number;
+};
+
+let firstEmploye: Employe;
+
+firstEmploye = {
+  name: "Stefan",
+  age: 34,
+};
+
+/// example 2
+let listOfEmployes: Employe[];
+
+listOfEmployes = [
+  {
+    name: "Stefan",
+    age: 34,
+  },
+];
+
+// Functions & types
+
+function addNumebers(a: number, b: number) {
+  return a + b;
+}
+
+function addNumebers2(a: number, b: number): number {
+  return a + b;
+}
+function addNumebers3(a: number, b: number): number | string {
+  return a + b;
+}
+
+
+/// void type for functions, it will return undefined
+function printValue(value: any) {
+  console.log(value);
+}
+
+
