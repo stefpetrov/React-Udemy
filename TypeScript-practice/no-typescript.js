@@ -1,7 +1,7 @@
-function add(a, b) {
-  return a + b;
-}
+// function addNum(a, b) {
+//   return a + b;
+// }
 
-const result = add(2, 5);
+// const res = addNum("2", 5);
 
-console.log(result);
+// console.log(res);
