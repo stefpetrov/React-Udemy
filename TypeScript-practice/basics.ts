@@ -83,10 +83,21 @@ function addNumebers3(a: number, b: number): number | string {
   return a + b;
 }
 
-
 /// void type for functions, it will return undefined
 function printValue(value: any) {
   console.log(value);
 }
 
+// Generics
+/// "T" means type
+
+function insertAtBeginning<T>(array: T[], value: T) {
+  const newArray = [value, ...array];
+  return newArray;
+}
+
+const demoArray = [1, 2, 3];
+
+insertAtBeginning(demoArray, "3");
+insertAtBeginning(demoArray, 3);
 
