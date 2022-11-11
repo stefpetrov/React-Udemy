@@ -6,13 +6,16 @@ import Todo from "./models/todo";
 
 function App() {
 
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState<Todo[]>([])
+  // that means that this state manage array of Todos
 
   const addTodoHandler = (todoText:string) => {
 
+    const newTodo = new Todo(todoText)
+
+    setTodos((prevTodos) => prevTodos.concat(newTodo))
     
-
-
+    
   }
 
 
