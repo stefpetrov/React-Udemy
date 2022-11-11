@@ -1,10 +1,15 @@
-function Todos() {
+import React from "react";
+
+type Props = { children?: React.ReactNode; items: string[] };
+
+const Todos: React.FC<Props> = (props) => {
   return (
     <ul>
-      <li>Learn React</li>
-      <li>Learn TypeScript</li>
+      {props.items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
     </ul>
   );
-}
+};
 
 export default Todos;
